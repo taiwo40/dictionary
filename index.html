@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+       <nav>
+     <ul>
+        <li>Dictionary</li>
+        <li>Grammar</li>
+        <li>lesson</li>
+        <li>words</li>
+        <li>meanings</li>
+    </ul>
+       </nav>
+       <div class="baba">
+        <div class="parent">
+        <h1>Try our daily crosswords</h1>
+        <h1> puzzle</h1>
+        <img src="book.jpeg" alt="" srcset="">
+    </div>
+    <div>
+        <form >
+        <input type="search" name="" id="dic">
+        <p><input type="submit" id="best" value="Search"></p>
+    </form>
+    </div>
+    <div id="blog">
+
+    </div>
+    </div>
+    <p>Definition;<b id="define"></b></p>
+    <p><b id="error"></b></p>
+    
+    <script>
+        let form =document.forms[0];
+        form.addEventListener('submit', searchDic)
+        function searchDic(e){
+            e.preventDefault()
+            let word = document.getElementById('dic').value;
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+        .then(response => response.json())
+        .then(response=>{
+           document.getElementById("define").innerHTML=response
+        }).catch(err => document.getElementById("error").innerHTML=err)
+    }
+   </script>
+</body>
+</html>

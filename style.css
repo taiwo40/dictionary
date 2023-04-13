@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background-color:blue;
+    padding-left: 15px;
+
+    
+}
+li{
+    list-style: none;
+    padding: 15px;
+    color: white;
+
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.baba{
+    background-color: turquoise;
+    margin: 10px;
+    padding-bottom: 30px;
+    
+}
+.parent{
+    margin: 20px;
+    color: green;
+}
+#best{
+    background-color:blueviolet;
+    border-radius: 30px;
+    font-size: 25px;
+    padding-bottom: 5px;
+}
